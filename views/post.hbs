@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+
+<!-- Mirrored from htmldemo.net/urdan/urdan/login-register.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 24 Aug 2024 11:16:45 GMT -->
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>Urdan - Minimal eCommerce HTML Template</title>
+	<meta name="robots" content="noindex, follow" />
+	<meta name="description"
+		content="Urdan Minimal eCommerce Bootstrap 5 Template is a stunning eCommerce website template that is the best choice for any online store.">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="https://gmpg.org/xfn/11">
+	<link rel="canonical" href="https://htmldemo.hasthemes.com/urdan/index.html" />
+
+	<!-- Open Graph (OG) meta tags are snippets of code that control how URLs are displayed when shared on social media  -->
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="Urdan - Minimal eCommerce HTML Template" />
+	<meta property="og:url" content="https://htmldemo.hasthemes.com/urdan/index.html" />
+	<meta property="og:site_name" content="Urdan - Minimal eCommerce HTML Template" />
+	<!-- For the og:image content, replace the # with a link of an image -->
+	<meta property="og:image" content="#" />
+	<meta property="og:description"
+		content="Urdan Minimal eCommerce Bootstrap 5 Template is a stunning eCommerce website template that is the best choice for any online store." />
+	<!-- Add site Favicon -->
+	<link rel="icon" href="/assets/images/favicon/cropped-favicon-32x32.png" sizes="32x32" />
+	<link rel="icon" href="/assets/images/favicon/cropped-favicon-192x192.png" sizes="192x192" />
+	<link rel="apple-touch-icon" href="/assets/images/favicon/cropped-favicon-180x180.png" />
+	<meta name="msapplication-TileImage" content="/assets/images/favicon/cropped-favicon-270x270.png" />
+
+	<!-- All CSS is here
+	============================================ -->
+	<link rel="stylesheet" href="/assets/css/vendor/bootstrap.min.css" />
+	<link rel="stylesheet" href="/assets/css/vendor/pe-icon-7-stroke.css" />
+	<link rel="stylesheet" href="/assets/css/vendor/themify-icons.css" />
+	<link rel="stylesheet" href="/assets/css/vendor/font-awesome.min.css" />
+	<link rel="stylesheet" href="/assets/css/plugins/animate.css" />
+	<link rel="stylesheet" href="/assets/css/plugins/aos.css" />
+	<link rel="stylesheet" href="/assets/css/plugins/magnific-popup.css" />
+	<link rel="stylesheet" href="/assets/css/plugins/swiper.min.css" />
+	<link rel="stylesheet" href="/assets/css/plugins/jquery-ui.css" />
+	<link rel="stylesheet" href="/assets/css/plugins/nice-select.css" />
+	<link rel="stylesheet" href="/assets/css/plugins/select2.min.css" />
+	<link rel="stylesheet" href="/assets/css/plugins/easyzoom.css" />
+	<link rel="stylesheet" href="/assets/css/plugins/slinky.css" />
+	<link rel="stylesheet" href="/assets/css/style.css" />
+	 <style>
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 0;
+            width: fit-content;
+            background-color: green;
+            color: #fff;
+            z-index: 9999;
+            transform: scaleX(0);
+            transition: transform 0.5s ease-in;
+            overflow: hidden;
+        }
+
+        .notification.open {
+            transform: scaleX(1);
+            transition: transform 0.5s ease-in;
+        }
+
+        .notification.error{
+            background-color: red !important;
+        }
+    </style>
+
+</head>
+
+
+
+
+<body>
+    <div class="notification {{#if error}}error{{/if}}">{{message}}</div>
+
+	<div class="main-wrapper main-wrapper-2">
+		{{>header}}
+		<!-- mini cart start -->
+		{{>sidecart}}
+		<div class="breadcrumb-area bg-gray-4 breadcrumb-padding-1">
+			<div class="container">
+				<div class="breadcrumb-content text-center">
+					<h2>Post Product </h2>
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><i class="ti-angle-right"></i></li>
+						<li>Post Product</li>
+					</ul>
+				</div>
+			</div>
+			<div class="breadcrumb-img-1">
+				<img src="/assets/images/banner/breadcrumb-1.png" alt="">
+			</div>
+			<div class="breadcrumb-img-2">
+				<img src="/assets/images/banner/breadcrumb-2.png" alt="">
+			</div>
+		</div>
+		<div class="login-register-area pb-100 pt-95">
+			<div class="container">
+				<div class="col-lg-12">
+					<form action="/post" method="post" enctype="multipart/form-data">
+						<div class="my_dashboard_review">
+							<div class="row">
+								<div class="col-lg-12 pt-4">
+									<h4 class="mb30">Post Product</h4>
+									<div class="my_profile_setting_input form-group">
+										<label for="propertyTitle">Post Title</label>
+										<input type="text" name="title" class="form-control">
+									</div>
+								</div>
+								<div class="col-lg-12 py-3">
+									<div class="my_profile_setting_textarea">
+										<label for="propertyDescription">Description</label>
+										<textarea class="form-control" name="description" rows="7"></textarea>
+									</div>
+								</div>
+								<div class="col-lg-4 col-xl-4 mt-3">
+									<div class="my_profile_setting_input form-group">
+										<label for="formGroupExamplePrice">Old Price</label>
+										<input type="number" class="form-control" name="oldprice"
+											>
+									</div>
+								</div>
+								<div class="col-lg-4 col-xl-4 mt-3">
+									<div class="my_profile_setting_input form-group">
+										<label for="formGroupExampleArea">New Price</label>
+										<input type="number" name="newprice" class="form-control"
+											>
+									</div>
+								</div>
+								<div class="col-lg-4 col-xl-4 mt-3">
+									<div class="my_profile_setting_input ui_kit_select_search form-group">
+										<label>Tags</label>
+										<input type="text" name="tags" placeholder="e.g chairs, tables" class="form-control"
+											>
+
+									</div>
+								</div>
+								<div class="col-lg-4 col-xl-4 mt-3">
+									<div class="my_profile_setting_input form-group">
+										<label for="formGroupExamplePrice">Brands</label>
+										<input type="text" class="form-control" name="brands"
+											placeholder="e.g Airi, Brand, Draven">
+									</div>
+								</div>
+								<div class="col-lg-4 col-xl-4 mt-3">
+									<div class="my_profile_setting_input form-group">
+										<label for="formGroupExampleArea">Colors</label>
+										<input type="text" name="colors" class="form-control"
+											placeholder="e.g Red, Green, Blue">
+									</div>
+								</div>
+								<div class="col-lg-4 col-xl-4 mt-3">
+									<div class="my_profile_setting_input ui_kit_select_search form-group">
+										<label>Size</label>
+										<input type="text" name="sizes" placeholder="e.g L, M, S, XL, XXL" class="form-control"
+											>
+
+									</div>
+								</div>
+								{{!-- <div class="col-xl-12">
+									<div class="my_profile_setting_input">
+										<button class="btn btn1 float-left">Back</button>
+										<button class="btn btn2 float-right">Next</button>
+									</div>
+								</div> --}}
+							</div>
+						</div>
+
+						<div class="my_dashboard_review mt-4">
+							<div class="row">
+								<div class="col-lg-12">
+									<h4 class="mb30">Property media</h4>
+								</div>
+
+								<div class="col-lg-6 col-xl-6 mt-3">
+									<div class="my_profile_setting_input ui_kit_select_search form-group">
+										<label>Quantity</label>
+										<input type="number" name="quantity" placeholder="Enter the total supply" class="form-control">
+
+									</div>
+								</div>
+								<div class="col-lg-6 col-xl-6 mt-3">
+									<div class="my_profile_setting_input ui_kit_select_search form-group">
+										<label>Product Images</label>
+										<input type="file" class="form-control" name="images" multiple
+											accept="image/*" />
+
+									</div>
+								</div>
+								<div class="col-xl-12 pt-4">
+									<div class="d-flex justify-content-between">
+										<button type="reset" class="btn btn-warning">Clear Form</button>
+										<button type="submit" class="btn btn-success">Post Property</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		{{>footer}}
+		<!-- Mobile Menu start -->
+		{{>mobile}}
+	</div>
+	<!-- All JS is here -->
+	<script src="/assets/js/vendor/modernizr-3.11.7.min.js"></script>
+	<script src="/assets/js/vendor/jquery-3.6.0.min.js"></script>
+	<script src="/assets/js/vendor/jquery-migrate-3.3.2.min.js"></script>
+	<script src="/assets/js/vendor/popper.min.js"></script>
+	<script src="/assets/js/vendor/bootstrap.min.js"></script>
+	<script src="/assets/js/plugins/wow.js"></script>
+	<script src="/assets/js/plugins/scrollup.js"></script>
+	<script src="/assets/js/plugins/aos.js"></script>
+	<script src="/assets/js/plugins/magnific-popup.js"></script>
+	<script src="/assets/js/plugins/jquery.syotimer.min.js"></script>
+	<script src="/assets/js/plugins/swiper.min.js"></script>
+	<script src="/assets/js/plugins/imagesloaded.pkgd.min.js"></script>
+	<script src="/assets/js/plugins/isotope.pkgd.min.js"></script>
+	<script src="/assets/js/plugins/jquery-ui.js"></script>
+	<script src="/assets/js/plugins/jquery-ui-touch-punch.js"></script>
+	<script src="/assets/js/plugins/jquery.nice-select.min.js"></script>
+	<script src="/assets/js/plugins/waypoints.min.js"></script>
+	<script src="/assets/js/plugins/jquery.counterup.js"></script>
+	<script src="/assets/js/plugins/select2.min.js"></script>
+	<script src="/assets/js/plugins/easyzoom.js"></script>
+	<script src="/assets/js/plugins/slinky.min.js"></script>
+	<script src="/assets/js/plugins/ajax-mail.js"></script>
+	<!-- Main JS -->
+	<script src="/assets/js/main.js"></script>
+	<script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const message = document.querySelector(".notification")
+            if (message.textContent.trim() === "") {
+                message.classList.remove("open")
+            } else {
+                message.style.padding = "10px 20px"
+                message.classList.add("open")
+                setTimeout(() => {
+                    message.style.padding = "0px"
+                    message.classList.remove("open")
+                    message.textContent = ""
+                }, 4000)
+            }
+        })
+    </script>
+</body>
+
+
+<!-- Mirrored from htmldemo.net/urdan/urdan/login-register.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 24 Aug 2024 11:16:45 GMT -->
+
+</html>
