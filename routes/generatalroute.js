@@ -21,7 +21,7 @@ const {
 router.get('/', getHomenow)
 router.get('/about', getAboutUs)
 router.get('/contact', getContact)
-router.get('/auth', getContact)
+//router.get('/auth', getContact)
 router.get('/post', getPost)
 router.post('/contact', postContactNow)
 router.post('/post', addProductnow)

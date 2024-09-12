@@ -18,4 +18,26 @@ const productmark = (data) =>{
     return schema.validate(data)
 }
 
-module.exports = {productmark}
+
+const uservalidate = (data) =>{
+    const schema = Joi.object({
+        username: Joi.string().required(),
+        email: Joi.string().email().required(),
+        password: Joi.string().min(8).required(),
+        confirmpassword: Joi.string().required(),
+    })
+    return schema.validate(data)
+}
+
+const loginvalidate = (data) =>{
+    const schema = Joi.object({
+        email: Joi.string().email().required(),
+        password: Joi.string().min(8).required(),
+    })
+    return schema.validate(data)
+}
+
+module.exports.productmark = productmark
+module.exports.uservalidate = uservalidate
+module.exports.loginvalidate = loginvalidate
+

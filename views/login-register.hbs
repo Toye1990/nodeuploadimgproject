@@ -44,12 +44,37 @@
     <link rel="stylesheet" href="/assets/css/plugins/easyzoom.css" />
     <link rel="stylesheet" href="/assets/css/plugins/slinky.css" />
     <link rel="stylesheet" href="/assets/css/style.css" />
+
+     <style>
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 0;
+            width: fit-content;
+            background-color: green;
+            color: #fff;
+            z-index: 9999;
+            transform: scaleX(0);
+            transition: transform 0.5s ease-in;
+            overflow: hidden;
+        }
+
+        .notification.open {
+            transform: scaleX(1);
+            transition: transform 0.5s ease-in;
+        }
+
+        .notification.error{
+            background-color: red !important;
+        }
+    </style>
 </head>
 
 
 
 
 <body>
+     <div class="notification {{#if error}}error{{/if}}">{{message}}</div>
     <div class="main-wrapper main-wrapper-2">
         {{>header}}
         <!-- mini cart start -->
@@ -89,9 +114,9 @@
                                 <div id="lg1" class="tab-pane active">
                                     <div class="login-form-container">
                                         <div class="login-register-form">
-                                            <form action="#" method="post">
-                                                <input type="text" name="user-name" placeholder="Username">
-                                                <input type="password" name="user-password" placeholder="Password">
+                                            <form action="/login" method="post">
+                                                <input type="text" name="username" placeholder="Username">
+                                                <input type="password" name="password" placeholder="Password">
                                                 <div class="login-toggle-btn">
                                                     <input type="checkbox">
                                                     <label>Remember me</label>
@@ -107,10 +132,11 @@
                                 <div id="lg2" class="tab-pane">
                                     <div class="login-form-container">
                                         <div class="login-register-form">
-                                            <form action="#" method="post">
-                                                <input type="text" name="user-name" placeholder="Username">
-                                                <input type="password" name="user-password" placeholder="Password">
-                                                <input name="user-email" placeholder="Email" type="email">
+                                            <form action="/register" method="post">
+                                                <input type="text" name="username" placeholder="Username">
+                                               <input name="email" placeholder="Email" type="email"> 
+                                                <input type="password" name="password" placeholder="Password">
+                                                <input type="password" name="confirmpassword" placeholder="confirm Password">
                                                 <div class="button-box btn-hover">
                                                     <button type="submit">Register</button>
                                                 </div>
@@ -153,6 +179,24 @@
     <script src="/assets/js/plugins/ajax-mail.js"></script>
     <!-- Main JS -->
     <script src="/assets/js/main.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const message = document.querySelector(".notification")
+            if (message.textContent.trim() === "") {
+                message.classList.remove("open")
+            } else {
+                message.style.padding = "10px 20px"
+                message.classList.add("open")
+                setTimeout(() => {
+                    message.style.padding = "0px"
+                    message.classList.remove("open")
+                    message.textContent = ""
+                }, 4000)
+            }
+        })
+    </script>
+
 </body>
 
 

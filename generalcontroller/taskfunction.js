@@ -47,7 +47,7 @@ const getContact = async(req, res) =>{
 
 const getAuth = async(req, res) =>{
     try{
-        res.render('logim-register')
+        res.render('login-register')
     }catch(err){
         console.log(err)
         res.render('404', {status: 500, message: "internal error occurred"})
@@ -57,7 +57,17 @@ const getAuth = async(req, res) =>{
 
 const getShop = async(req, res) =>{
     try{
-        res.render('shop')
+        const allproducts = productmodel.find().sort({date: -1})
+         products = allproducts.map((item) =>{
+            const discount = item.discount
+            if(discount <= 0){
+             item.newprice = null
+            }else{
+                item.newprice = item.oldprice - (item.oldprice * discount/100)
+            }
+            return {...itemObject()}
+         })
+        res.render('shop', {products: products})
     }catch(err){
         console.log(err)
         res.render('404', {status: 500, message: "internal error occurred"})

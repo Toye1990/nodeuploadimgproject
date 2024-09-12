@@ -7,6 +7,7 @@ const cookieparser = require("cookie-parser")
 require("dotenv").config()
 const generalroutes = require("./routes/generatalroute") 
 const accountroutes = require("./routes/accountroutes") 
+const authroutes = require('./routes/authroute')
 
 const url = process.env.MONGODB
 // connect to mongo server
@@ -43,6 +44,7 @@ app.use(cookieparser())
 app.use(exphfileupld())
 app.use("/", generalroutes)
 app.use("/account", accountroutes)
+app.use("/", authroutes)
 
 
 app.use("*", (req, res)=>{
